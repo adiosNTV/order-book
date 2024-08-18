@@ -1,10 +1,9 @@
 "use client"
 
-import useSellOrderStore from "@/store/sellOrder.store";
-import OrderTable from "../OrderTable/OrderTable";
 import useBuyOrderStore from "@/store/buyOrder.store";
-import { useEffect, useState } from "react";
+import useSellOrderStore from "@/store/sellOrder.store";
 import useSpreadStore from "@/store/spread.store";
+import OrderTable from "../OrderTable/OrderTable";
 
 const Spread = () => {
     const sellOrder = useSellOrderStore((state) => state.sellOrder);
@@ -12,11 +11,11 @@ const Spread = () => {
     const spread = useSpreadStore((state) => state.spread)
 
     return (
-        <div className="flex flex-col justify-evenly gap-3 p-0 m-0 w-full lg:max-w-[440px]">
-            <OrderTable order={sellOrder.slice(0, 9).reverse()} type="Sell" isShowHeader />
+        <div className="flex flex-col justify-start gap-2 p-0 m-0 w-full lg:max-w-[500px]">
+            <h1 className="font-bold text-[24px]">ORDER BOOK</h1>
+            <OrderTable order={sellOrder.slice(0, 10).reverse()} type="Ask" isShowHeader />
             <div>
                 Spread:
-
                 <span className={spread > 0 ? "ml-5 text-green-400 font-bold" : "ml-5 text-red-400 font-bold"}>
                     {
                         Intl.NumberFormat('en-US', {
@@ -28,7 +27,7 @@ const Spread = () => {
                     }
                 </span>
             </div>
-            <OrderTable order={buyOrder.slice(0, 9)} type="Buy" />
+            <OrderTable order={buyOrder.slice(0, 10)} type="Bid" />
         </div>
     );
 }
