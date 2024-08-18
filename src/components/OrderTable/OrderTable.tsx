@@ -26,17 +26,17 @@ const OrderTable = ({ order, type, isShowHeader = false }: { order: NumberOrder[
                             key={index}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            <TableCell component="th" scope="row" style={{ width: '15%', height: "10px", paddingBottom: 2 }}>
+                            <TableCell component="th" scope="row" style={{ width: '15%', height: "10px", paddingBottom: 3 }}>
                                 <span className={type === "Bid" ? "text-[12px] font-bold text-green-400" : "text-[12px] font-bold text-red-400"}> {type} {index + 1}</span>
                             </TableCell>
-                            <TableCell style={{ width: '30%', height: "10px", paddingBottom: 2 }} className='text-[11.5px]'>{Intl.NumberFormat('en-US', {
+                            <TableCell style={{ width: '30%', height: "10px", paddingBottom: 3 }} className='text-[11.5px]'>{Intl.NumberFormat('en-US', {
                                 style: 'currency',
                                 currency: 'USD',
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2
                             }).format(price)}</TableCell>
-                            <TableCell style={{ width: '25%', height: "10px", paddingBottom: 2 }} className='text-[11.5px]'>{quantity.toFixed(5)}</TableCell>
-                            <TableCell style={{ width: '30%', height: "10px", paddingBottom: 2 }} className='text-[11.5px]'>{Intl.NumberFormat('en-US', {
+                            <TableCell style={{ width: '25%', height: "10px", paddingBottom: 3 }} className='text-[11.5px]'>{quantity.toFixed(5)}</TableCell>
+                            <TableCell style={{ width: '30%', height: "10px", paddingBottom: 3 }} className='text-[11.5px]'>{Intl.NumberFormat('en-US', {
                                 style: 'currency',
                                 currency: 'USD',
                                 minimumFractionDigits: 5,

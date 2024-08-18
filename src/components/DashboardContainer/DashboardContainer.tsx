@@ -89,7 +89,7 @@ const DashboardContainer = () => {
     }, [sellOrder, buyOrder])
 
     return (
-        <div className="w-full flex flex-col-reverse lg:flex-row h-[95%]">
+        <div className="w-full flex flex-col-reverse h-full lg:flex-row">
             <div className="w-full hidden lg:block">
                 <TradingViewWidget />
             </div>
